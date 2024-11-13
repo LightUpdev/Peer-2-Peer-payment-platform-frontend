@@ -1,0 +1,331 @@
+/* Basic styling for the navbar */
+.navbar {
+  background-color: #f3f3fb;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 1rem 3.5rem;
+  position: relative;
+}
+
+.navbar-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-item {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 20px;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 2px;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0.5rem;
+}
+.user-info li {
+  margin: 0.5rem;
+}
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.dashboard-container .nav {
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+  justify-content: center;
+}
+.dashboard-container .nav ul {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.dashboard-container .nav ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard {
+  background-color: white;
+  color: black;
+  padding: 2rem 0 2rem 5rem;
+  width: 80%;
+  margin: 0.2rem 0 0 3rem;
+  position: relative;
+  border-radius: 50px 0 0 50px;
+  justify-content: center;
+  align-items: center;
+}
+.dashboard .dashboard-cards {
+  display: flex;
+  align-items: center;
+}
+i {
+  font-size: 18px;
+  margin: 0 10px;
+}
+
+.dashboard .balance {
+  font-weight: bold;
+  font-size: 28px;
+  margin: 0;
+}
+
+.card {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  height: 100px;
+  margin-top: 20px;
+  margin-right: 30px;
+  background-color: #f3f3fb;
+  cursor: pointer;
+}
+.card .card-icon {
+  background-color: #0095e7;
+  height: 35px;
+  align-content: center;
+  border-radius: 50px;
+  color: white;
+  border: none;
+  outline: none;
+  margin-left: 20px;
+}
+
+.card p {
+  margin-left: 10px;
+}
+
+.dashboard-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 11rem 5px 5px;
+}
+
+.dashboard-heading h3 {
+  font-weight: 600;
+}
+.dashboard-heading small {
+  color: #00cfc9;
+  font-weight: 500;
+}
+
+.currency-card-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 83%;
+  cursor: pointer;
+}
+
+.dashboard-currency-card {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-between;
+  width: 90%;
+  border-radius: 10px;
+  background-color: #d7f6fe;
+  margin: 4px 0;
+}
+.dashboard-currency-card .currency {
+  display: flex;
+}
+
+.dashboard-currency-card .currency img {
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+}
+.dashboard-currency-card .currency .currency-content {
+  align-self: center;
+  margin-top: 5px;
+}
+
+.history {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 82.5%;
+}
+
+.history td,
+.history th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.history tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.history tr:hover {
+  background-color: #ddd;
+}
+
+.history th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0095e7;
+  color: white;
+}
+
+.account-detail {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+}
+.complete-transfer {
+  margin: 15px 5px;
+}
+.initiate-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transaction-history-container {
+  width: 83%;
+}
+
+.initiate-transfer-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.initiate-transfer-container h2,
+.error-msg {
+  text-align: center;
+}
+.initiate-transfer-container .form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin-top: 4px;
+  margin: 0 auto;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-item {
+    margin: 1.5rem 0;
+    font-size: 1.5rem;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .hamburger.toggle .line:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 5px);
+  }
+
+  .hamburger.toggle .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.toggle .line:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -5px);
+  }
+  .dashboard .dashboard-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .dashboard .dashboard-cards .card {
+    width: 100%;
+    height: 80px;
+  }
+  .currency-card-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .dashboard-currency-card {
+    width: 90%;
+    margin: 5px auto;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .dashboard-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 11rem 5px 5px;
+    width: 95%;
+  }
+
+  .dashboard-heading h3 {
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .dashboard-heading small {
+    color: #00cfc9;
+    font-weight: 500;
+    font-size: 13px;
+  }
+  .transaction-history-container {
+    width: 93%;
+  }
+}
