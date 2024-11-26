@@ -33,6 +33,7 @@ const authSlice = createSlice({
   initialState: {
     user: null,
     token: null,
+    loginTime: null,
     status: "idle", // idle | loading | succeeded | failed
     error: null,
   },
@@ -40,6 +41,7 @@ const authSlice = createSlice({
     logout: (state) => {
       state.user = null;
       state.token = null;
+      state.loginTime = null;
       state.status = "idle";
       state.error = null;
     },
@@ -54,6 +56,7 @@ const authSlice = createSlice({
         state.status = "succeeded";
         state.user = action.payload;
         state.token = action.payload.token;
+        state.loginTime = Date.now(); //save login time
         state.error = null;
       })
       .addCase(registerUser.rejected, (state, action) => {
@@ -68,6 +71,7 @@ const authSlice = createSlice({
         state.status = "succeeded";
         state.user = action.payload;
         state.token = action.payload.token;
+        state.loginTime = Date.now(); //save login time
         state.error = null;
       })
       .addCase(loginUser.rejected, (state, action) => {

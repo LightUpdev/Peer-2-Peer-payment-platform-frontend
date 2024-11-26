@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -6,13 +6,26 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const { user } = useSelector((state) => state.auth);
+  const { loginTime } = useSelector((state) => state.auth);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const logoutInFullDay = () => {};
+
+  useEffect(() => {
+    const checkSessionExpiration = () => {
+      if (loginTime) {
+        const elapsedTime = Date.now() - loginTime;
+
+        if (elapsedTime > 24 * 60 * 60 * 1000) {
+          dispatch({ type: "auth/logout" }); // Log the user out
+        }
+      }
+    };
+    checkSessionExpiration();
+  }, [dispatch, loginTime]);
 
   const logoutUser = () => {
     dispatch({ type: "auth/logout" });
