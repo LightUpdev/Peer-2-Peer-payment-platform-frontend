@@ -12,6 +12,7 @@ const Navbar = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const logoutInFullDay = () => {};
 
   const logoutUser = () => {
     dispatch({ type: "auth/logout" });
